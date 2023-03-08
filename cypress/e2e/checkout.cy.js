@@ -8,9 +8,6 @@ describe('Checkout', () => {
     cy.meuLogin(dados.email, dados.senha)
   })
   it('Deve fazer checkout com sucesso ', () => {
-    minhaContaPage.message.should(
-      'contain',
-      'A partir do painel de controle de sua conta'
-    )
+    cy.get('a > .hidden-xs').should('contain', 'Welcome')
   })
 })
