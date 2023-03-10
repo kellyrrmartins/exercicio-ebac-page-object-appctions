@@ -1,13 +1,15 @@
 ///<reference types="cypress"/>
 
-const dados = require('../fixtures/dados.json')
+const produtos = require('../fixtures/produtos.json')
 
-const { minhaContaPage } = require('../support/pages')
 describe('Checkout', () => {
   beforeEach(() => {
-    cy.meuLogin(dados.email, dados.senha)
+    cy.addCart(produtos.tamanho, produtos.cor, produtos.quantidade)
   })
   it('Deve fazer checkout com sucesso ', () => {
-    cy.get('a > .hidden-xs').should('contain', 'Welcome')
+    cy.get('.woocommerce-message').should(
+      'contain',
+      `${produtos.quantidade} × “Ingrid Running Jacket” foram adicionados no seu carrinho.`
+    )
   })
 })
