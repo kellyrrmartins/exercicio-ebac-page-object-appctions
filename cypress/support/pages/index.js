@@ -1,4 +1,4 @@
 import cadastroPage from './cadastro.page'
 import { minhaContaPage } from './minhaConta.page'
-
-export { cadastroPage, minhaContaPage }
+import HomePage from './home.page'
+export { cadastroPage, minhaContaPage, HomePage }
