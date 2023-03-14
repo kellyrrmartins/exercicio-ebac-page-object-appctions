@@ -3,21 +3,19 @@
 import { HomePage } from '../support/pages'
 describe('Carrinho', () => {
   beforeEach(() => {
-    cy.visit('/')
+    cy.visit('/produtos/page/2')
   })
 
   it('Deve adicionar um produto com sucesso', () => {
-    const produto = {
-      product: 'ingrid-running-jacket',
-      attribute_size: 'XS',
-      attribute_color: 'Red'
-    }
-    cy.intercept('POST', '/ingrid-running-jacket', {
-      form: {
-        produto
-      }
-    })
+    cy.intercept('POST', '/augusta-pullover-jacket/').as('getProdutos')
+    HomePage.ecolherProduto('Augusta Pullover Jacket', 'S', 'Blue', '1')
+
+    // cy.wait('@getProdutos')
     cy.visit('/carrinho')
-    // HomePage.ecolherProduto('Stellar Solar Jacket', 'S', 'Blue', '1')
+    cy.get('.product-name > a').should(
+      'contain',
+      'Augusta Pullover Jacket - S, Blue'
+    )
+    cy.intercept('GET')
   })
 })
