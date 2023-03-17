@@ -1,6 +1,13 @@
-{
-  "nome": "Augusta Pullover Jacket",
-  "tamanho": "S",
-  "cor": "Orange",
-  "quantidade": "1"
-}
+[
+  {
+    "nome": "Augusta Pullover Jacket",
+    "tamanho": "S",
+    "cor": "Orange",
+    "quantidade": "1"
+  },
+  {
+    "tamanho": "M",
+    "cor": "Orange",
+    "quantidade": "2"
+  }
+]

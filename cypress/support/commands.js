@@ -6,6 +6,8 @@
 //   fd.append('_wp_http_referer', '/minha-conta')
 //   fd.append('login', 'Login')
 
+const faker = require('faker')
+
 //   cy.request({
 //     method: 'POST',
 //     url: `/minha-conta`,
@@ -44,4 +46,15 @@ Cypress.Commands.add('addCart', (tamanho, cor, qunatidade) => {
   })
 
   cy.visit('/carrinho')
+})
+
+Cypress.Commands.add('geradorFixture', () => {
+  cy.writeFile('cypress/fixtures/dates.json', {
+    date: Cypress._.times(1, () => {
+      return {
+        email: `${faker.internet.email()}`,
+        password: `${faker.internet.password()}`
+      }
+    })
+  })
 })

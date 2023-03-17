@@ -1,26 +1,39 @@
 /// <reference types="cypress" />
 
+// const dates = require('../fixtures/dates.json')
 let faker = require('faker')
-const dados = require('../fixtures/dados.json')
-const { cadastroPage, minhaContaPage } = require('../support/pages')
+// const dados = require('../fixtures/dados.json')
+const {
+  cadastroPage,
+  minhaContaPage,
+  cadastroDinamico
+} = require('../support/pages')
 describe('Cadastro ', () => {
-  let email = faker.internet.email()
+  // let email = faker.internet.email()
   beforeEach(() => {
     cy.visit('/minha-conta')
-  })
-  it('Deve realizar o cadastro na EBAC-Shop ', () => {
-    cy.intercept('POST', '/minha-conta').as('novo-cadastro')
-    cy.get('#reg_email').type(email)
-    cy.get('#reg_password').type(dados.senha)
-    cy.get(':nth-child(4) > .button').click()
 
-    cy.wait('@novo-cadastro').its('response.statusCode').should('eq', 302)
-    cy.get('@novo-cadastro').then(res => {
-      expect(res.response.body).to.eq('')
+    cy.geradorFixture()
+  })
+  it('Deve realizar o cadastro, com validações dinamicas na EBAC-Shop ', () => {
+    cy.fixture('dates').then(resp => {
+      resp.date.forEach(item => {
+        cadastroPage.register(item.email, item.password)
+      })
     })
     minhaContaPage.message.should(
       'contain',
       'A partir do painel de controle de sua conta'
     )
   })
+
+  // dates.date.forEach(dado => {
+  //   it.only('Deve fazer o cadastro com dados dinamicos ', () => {
+  //     cadastroPage.register(dado.email, dado.password)
+  //     minhaContaPage.message.should(
+  //       'contain',
+  //       'A partir do painel de controle de sua conta'
+  //     )
+  //   })
+  // })
 })

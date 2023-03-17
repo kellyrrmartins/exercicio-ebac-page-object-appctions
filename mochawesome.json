@@ -1,0 +1,221 @@
+{
+  "stats": {
+    "suites": 3,
+    "tests": 3,
+    "passes": 3,
+    "pending": 0,
+    "failures": 0,
+    "testsRegistered": 3,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false,
+    "start": "2023-03-17T22:18:31.731Z",
+    "end": "2023-03-17T22:19:38.636Z",
+    "duration": 66905
+  },
+  "results": [
+    {
+      "uuid": "149ca212-b049-4519-8015-f9d6d3c21eb8",
+      "title": "",
+      "fullFile": "cypress/e2e/checkout.cy.js",
+      "file": "cypress/e2e/checkout.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "f6975628-feb8-47a2-a1f7-1d64590e47fc",
+          "title": "Checkout",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Deve fazer checkout com sucesso ",
+              "fullTitle": "Checkout Deve fazer checkout com sucesso ",
+              "timedOut": null,
+              "duration": 6328,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.woocommerce-message').should('contain', `${produtos[1].quantidade} × “Ingrid Running Jacket” foram adicionados no seu carrinho.`);",
+              "err": {},
+              "uuid": "0f628cbe-2a52-44cc-af4e-c783bd025992",
+              "parentUUID": "f6975628-feb8-47a2-a1f7-1d64590e47fc",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "0f628cbe-2a52-44cc-af4e-c783bd025992"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 6328,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "86d86451-0dd7-4632-a6f3-3995b9ba4f9f",
+      "title": "",
+      "fullFile": "cypress/e2e/intercept.cy.js",
+      "file": "cypress/e2e/intercept.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "25f0bde6-8f56-42e7-a269-ac6dceb51144",
+          "title": "Carrinho",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Deve adicionar um produto com sucesso",
+              "fullTitle": "Carrinho Deve adicionar um produto com sucesso",
+              "timedOut": null,
+              "duration": 15678,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.intercept('POST', '/product/augusta-pullover-jacket', {\n  fixture: 'resposta.html'\n}).as('novo-produto');\ncy.get('[class=\"product-block grid\"]').contains(produtos[0].nome).click();\ncy.get('.button-variable-item-' + produtos[0].tamanho).click();\ncy.get('.button-variable-item-' + produtos[0].cor).click();\ncy.get('.input-text').clear().type(produtos[0].quantidade);\ncy.get('.single_add_to_cart_button').click();\ncy.wait('@novo-produto').then(resp => {\n  expect(resp.response.statusCode).to.equal(200);\n});",
+              "err": {},
+              "uuid": "34f9309c-e7f5-4c16-aaae-5a858ed27949",
+              "parentUUID": "25f0bde6-8f56-42e7-a269-ac6dceb51144",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "34f9309c-e7f5-4c16-aaae-5a858ed27949"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 15678,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "d6d672fc-c4f7-4c75-89ac-66aecd8b2472",
+      "title": "",
+      "fullFile": "cypress/e2e/cadastro.cy.js",
+      "file": "cypress/e2e/cadastro.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "a055e5de-5a65-4b96-a661-56b2b757f4cd",
+          "title": "Cadastro ",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Deve realizar o cadastro, com validações dinamicas na EBAC-Shop ",
+              "fullTitle": "Cadastro  Deve realizar o cadastro, com validações dinamicas na EBAC-Shop ",
+              "timedOut": null,
+              "duration": 13442,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.fixture('dates').then(resp => {\n  resp.date.forEach(item => {\n    cadastroPage.register(item.email, item.password);\n  });\n});\nminhaContaPage.message.should('contain', 'A partir do painel de controle de sua conta');",
+              "err": {},
+              "uuid": "f27f9ff2-70ff-43a2-ab20-124d638c6da1",
+              "parentUUID": "a055e5de-5a65-4b96-a661-56b2b757f4cd",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "f27f9ff2-70ff-43a2-ab20-124d638c6da1"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 13442,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/results",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}
