@@ -55,11 +55,8 @@ describe('Carrinho', () => {
     cy.get('.button-variable-item-' + produtos.cor).click()
     cy.get('.input-text').clear().type(produtos.quantidade)
     cy.get('.single_add_to_cart_button').click()
-    cy.intercept('POST', '/wp-admin/admin-ajax.php', req => {}).as(
-      'getCarrinho'
-    )
-    cy.get('@getCarrinho').then(resp => {
-      cy.log(resp)
+    cy.get('@getCarrinho').then(req => {
+      cy.log(req)
     })
   })
 })
