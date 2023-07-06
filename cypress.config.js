@@ -6,11 +6,10 @@ module.exports = defineConfig({
     baseUrl: 'http://lojaebac.ebaconline.art.br',
     reporter: 'mochawesome',
     reporterOptions: {
-      reportDir: 'mochawesome-report',
-      reportFilename: 'index.html',
+      reportDir: 'cypress/results/',
       overwrite: false,
-      html: true,
-      json: false
+      html: false,
+      json: true
     }
   }
 })

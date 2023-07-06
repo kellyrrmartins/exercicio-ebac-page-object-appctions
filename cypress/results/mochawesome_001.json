@@ -5,9 +5,9 @@
     "passes": 1,
     "pending": 0,
     "failures": 0,
-    "start": "2023-07-06T13:58:57.044Z",
-    "end": "2023-07-06T13:59:08.891Z",
-    "duration": 11847,
+    "start": "2023-07-06T18:17:37.822Z",
+    "end": "2023-07-06T18:17:44.532Z",
+    "duration": 6710,
     "testsRegistered": 1,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "1770f9c7-c079-4be6-bec3-0aa450e45f41",
+      "uuid": "4c177df9-716f-4e73-8f1d-bc1fbb417aa2",
       "title": "",
       "fullFile": "cypress/e2e/checkout.cy.js",
       "file": "cypress/e2e/checkout.cy.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "d7de047d-cd54-45b3-a9d7-a5460f7f9065",
+          "uuid": "0e47604b-6b1a-4da3-8b74-6148ce74cafc",
           "title": "Checkout",
           "fullFile": "",
           "file": "",
@@ -38,29 +38,29 @@
               "title": "Deve fazer checkout com sucesso ",
               "fullTitle": "Checkout Deve fazer checkout com sucesso ",
               "timedOut": null,
-              "duration": 11698,
+              "duration": 6499,
               "state": "passed",
-              "speed": "slow",
+              "speed": "medium",
               "pass": true,
               "fail": false,
               "pending": false,
               "context": null,
               "code": "cy.get('.woocommerce-message').should('contain', `${produtos[1].quantidade} × “Ingrid Running Jacket” foram adicionados no seu carrinho.`);",
               "err": {},
-              "uuid": "ee935e1f-0ab0-4a24-8781-db3aac47c092",
-              "parentUUID": "d7de047d-cd54-45b3-a9d7-a5460f7f9065",
+              "uuid": "9a2d2865-1930-49b2-b1d3-36a85b2d9a9b",
+              "parentUUID": "0e47604b-6b1a-4da3-8b74-6148ce74cafc",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "ee935e1f-0ab0-4a24-8781-db3aac47c092"
+            "9a2d2865-1930-49b2-b1d3-36a85b2d9a9b"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 11698,
+          "duration": 6499,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
@@ -94,7 +94,7 @@
     },
     "marge": {
       "options": {
-        "reportDir": "cypress/results",
+        "reportDir": "cypress/results/",
         "overwrite": false,
         "html": false,
         "json": true

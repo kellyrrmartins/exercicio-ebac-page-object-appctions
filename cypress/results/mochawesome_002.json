@@ -5,9 +5,9 @@
     "passes": 1,
     "pending": 0,
     "failures": 0,
-    "start": "2023-07-06T13:59:18.563Z",
-    "end": "2023-07-06T13:59:29.159Z",
-    "duration": 10596,
+    "start": "2023-07-06T18:17:54.260Z",
+    "end": "2023-07-06T18:18:05.398Z",
+    "duration": 11138,
     "testsRegistered": 1,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "b283e888-63d4-42da-a1dd-6c015825c5e1",
+      "uuid": "d2b8c03e-381d-4dcc-b7f9-087ab25ce12c",
       "title": "",
       "fullFile": "cypress/e2e/intercept.cy.js",
       "file": "cypress/e2e/intercept.cy.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "993ab105-a431-4334-bfd5-e3e56952627b",
+          "uuid": "eea23054-d723-4367-afd1-9d701f7cbd11",
           "title": "Carrinho",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "Deve adicionar um produto com sucesso",
               "fullTitle": "Carrinho Deve adicionar um produto com sucesso",
               "timedOut": null,
-              "duration": 10361,
+              "duration": 10890,
               "state": "passed",
               "speed": "slow",
               "pass": true,
@@ -47,20 +47,20 @@
               "context": null,
               "code": "cy.intercept('POST', '/product/augusta-pullover-jacket', {\n  fixture: 'resposta.html'\n}).as('novo-produto');\ncy.get('[class=\"product-block grid\"]').contains(produtos[0].nome).click();\ncy.get('.button-variable-item-' + produtos[0].tamanho).click();\ncy.get('.button-variable-item-' + produtos[0].cor).click();\ncy.get('.input-text').clear().type(produtos[0].quantidade);\ncy.get('.single_add_to_cart_button').click();\ncy.wait('@novo-produto').then(resp => {\n  expect(resp.response.statusCode).to.equal(200);\n});",
               "err": {},
-              "uuid": "cc35c4de-8432-400d-8200-cbfb977d2d86",
-              "parentUUID": "993ab105-a431-4334-bfd5-e3e56952627b",
+              "uuid": "0cdaed35-a4e7-4916-a0a1-d5e1e2b479af",
+              "parentUUID": "eea23054-d723-4367-afd1-9d701f7cbd11",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "cc35c4de-8432-400d-8200-cbfb977d2d86"
+            "0cdaed35-a4e7-4916-a0a1-d5e1e2b479af"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 10361,
+          "duration": 10890,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
@@ -94,7 +94,7 @@
     },
     "marge": {
       "options": {
-        "reportDir": "cypress/results",
+        "reportDir": "cypress/results/",
         "overwrite": false,
         "html": false,
         "json": true

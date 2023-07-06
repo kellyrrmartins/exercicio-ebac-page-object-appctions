@@ -5,9 +5,9 @@
     "passes": 1,
     "pending": 0,
     "failures": 0,
-    "start": "2023-07-06T13:58:27.996Z",
-    "end": "2023-07-06T13:58:42.885Z",
-    "duration": 14889,
+    "start": "2023-07-06T18:17:13.106Z",
+    "end": "2023-07-06T18:17:25.257Z",
+    "duration": 12151,
     "testsRegistered": 1,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "b3a8e576-c02f-4252-ad8c-73059c0a4df2",
+      "uuid": "c75d5f95-113f-4420-b3f5-7428a12b694c",
       "title": "",
       "fullFile": "cypress/e2e/cadastro.cy.js",
       "file": "cypress/e2e/cadastro.cy.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "94e8cada-70c0-4af0-8604-b909853a8400",
+          "uuid": "f52f92ad-2e07-47d9-809f-ca5f20f4eecf",
           "title": "Cadastro ",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "Deve realizar o cadastro, com validações dinamicas na EBAC-Shop ",
               "fullTitle": "Cadastro  Deve realizar o cadastro, com validações dinamicas na EBAC-Shop ",
               "timedOut": null,
-              "duration": 14739,
+              "duration": 11987,
               "state": "passed",
               "speed": "slow",
               "pass": true,
@@ -47,20 +47,20 @@
               "context": null,
               "code": "cy.fixture('dates').then(resp => {\n  resp.date.forEach(item => {\n    cadastroPage.register(item.email, item.password);\n  });\n});\nminhaContaPage.message.should('contain', 'A partir do painel de controle de sua conta');",
               "err": {},
-              "uuid": "acf433ae-70d0-41f6-abca-6866664bba2d",
-              "parentUUID": "94e8cada-70c0-4af0-8604-b909853a8400",
+              "uuid": "e96a64c7-eefd-44bf-a2bb-f1467a4a54a9",
+              "parentUUID": "f52f92ad-2e07-47d9-809f-ca5f20f4eecf",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "acf433ae-70d0-41f6-abca-6866664bba2d"
+            "e96a64c7-eefd-44bf-a2bb-f1467a4a54a9"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 14739,
+          "duration": 11987,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
@@ -94,7 +94,7 @@
     },
     "marge": {
       "options": {
-        "reportDir": "cypress/results",
+        "reportDir": "cypress/results/",
         "overwrite": false,
         "html": false,
         "json": true
