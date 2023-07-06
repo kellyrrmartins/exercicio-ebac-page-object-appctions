@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "cypress run --reporter mochawesome --reporter-options reportDir=\"mochawesome-report\",overwrite=false,reportFilename=index.html,html=false,json=true && npx mochawesome-merge \"cypress/results/*.json\" > mochawesome.json && npx marge mochawesome.json"
+    "test": "cypress run --reporter mochawesome --reporter-options reportDir=\"cypress/mochawesome-report\",overwrite=false,html=false,json=true && npx mochawesome-merge \"cypress/mochawesome-report/*.json\" > index.json && npx marge index.json"
   },
   "keywords": [],
   "author": "",
