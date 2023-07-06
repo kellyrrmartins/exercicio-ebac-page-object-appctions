@@ -1,4 +1,4 @@
-name: Teste Page Object
+name: Teste Page Object e APP-Action
 
 on:
     push:
